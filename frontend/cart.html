@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount"
+                      class="cart-count">
+                    0
+                </span>
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            YOUR ORDER
+        </span>
+
+        <h1>
+            Your Cart
+        </h1>
+
+        <p>
+            Review your items before checkout.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CART ================= -->
+
+<main class="section cart-page">
+
+
+    <div id="cartMessage"
+         class="message">
+    </div>
+
+
+    <div id="cartContainer">
+
+        <div class="loading">
+            Loading cart...
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+
+</html>

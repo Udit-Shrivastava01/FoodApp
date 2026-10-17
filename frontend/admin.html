@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            ADMIN PANEL
+        </span>
+
+        <h1>
+            FoodApp Dashboard
+        </h1>
+
+        <p>
+            Manage products, restaurants, categories,
+            orders and customer feedback.
+        </p>
+
+    </div>
+
+</section>
+<!-- ================= DELIVERY MANAGEMENT ================= -->
+
+<section class="admin-card admin-full-card">
+
+    <div class="admin-section-header">
+
+        <div>
+
+            <h2>
+                🚴 Delivery Management
+            </h2>
+
+            <p>
+                Manage delivery staff and availability.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn btn-secondary"
+            onclick="loadDeliveryStaff()"
+        >
+            Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ADD DELIVERY STAFF -->
+
+    <form
+        id="deliveryForm"
+        class="delivery-form"
+        onsubmit="addDeliveryStaff(event)"
+    >
+
+        <div class="form-group">
+
+            <label>
+                Delivery Person Name
+            </label>
+
+            <input
+                type="text"
+                id="deliveryName"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Contact
+            </label>
+
+            <input
+                type="text"
+                id="deliveryContact"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            id="deliveryButton"
+            class="btn btn-primary"
+        >
+            Add Delivery Person
+        </button>
+
+    </form>
+
+
+    <div id="deliveryContainer">
+
+        <div class="loading">
+            Loading delivery staff...
+        </div>
+
+    </div>
+
+</section>
+
+<main class="section admin-page">
+
+
+    <div id="adminMessage"
+         class="message">
+    </div>
+
+
+    <!-- ================= DASHBOARD CARDS ================= -->
+
+    <div class="admin-stats">
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                🍔
+            </span>
+
+            <div>
+
+                <strong id="productCount">
+                    0
+                </strong>
+
+                <p>
+                    Products
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                🍽️
+            </span>
+
+            <div>
+
+                <strong id="restaurantCount">
+                    0
+                </strong>
+
+                <p>
+                    Restaurants
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                📂
+            </span>
+
+            <div>
+
+                <strong id="categoryCount">
+                    0
+                </strong>
+
+                <p>
+                    Categories
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <span>
+                ⭐
+            </span>
+
+            <div>
+
+                <strong id="feedbackCount">
+                    0
+                </strong>
+
+                <p>
+                    Feedback</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ADMIN GRID ================= -->
+
+    <div class="admin-grid">
+
+
+        <!-- ADD PRODUCT -->
+
+        <section class="admin-card">
+
+            <h2>
+                ➕ Add Product
+            </h2>
+
+            <p>
+                Add a new food item.
+            </p>
+
+
+            <form
+                id="productForm"
+                onsubmit="addProduct(event)"
+            >
+
+                <div class="form-group">
+
+                    <label>
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        rows="3"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Restaurant ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productRestaurantId"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Category ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productCategoryId"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Product Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImage"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="productButton"
+                    class="btn btn-primary"
+                >
+                    Add Product
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ADD RESTAURANT -->
+
+        <section class="admin-card">
+
+            <h2>
+                🍽️ Add Restaurant
+            </h2>
+
+            <p>
+                Add a new restaurant.
+            </p>
+
+
+            <form
+                id="restaurantForm"
+                onsubmit="addRestaurant(event)"
+            >
+
+                <div class="form-group">
+
+                    <label>
+                        Restaurant Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="restaurantName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Owner Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="restaurantOwnerName"
+                        placeholder="Owner full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Restaurant GSTN
+                    </label>
+
+                    <input
+                        type="text"
+                        id="restaurantGstN"
+                        placeholder="GST number"
+                        maxlength="255"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Contact Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="restaurantContact"
+                        placeholder="10-digit contact number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Address
+                    </label>
+
+                    <textarea
+                        id="restaurantAddress"
+                        rows="3"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Opening Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="openingTime"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Closing Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="closingTime"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Restaurant Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="restaurantImage"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="restaurantButton"
+                    class="btn btn-primary"
+                >
+                    Add Restaurant
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- CATEGORY -->
+
+        <section class="admin-card">
+
+            <h2>
+                📂 Add Category
+            </h2>
+
+            <p>
+                Create a food category.
+            </p>
+
+
+            <form
+                onsubmit="addCategory(event)"
+            >
+
+                <div class="form-group">
+
+                    <label>
+                        Category Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        placeholder="Pizza"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Add Category
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- DELETE PRODUCT -->
+
+        <section class="admin-card">
+
+            <h2>
+                🗑️ Delete Product
+            </h2>
+
+            <p>
+                Remove a product using its ID.
+            </p>
+
+
+            <form
+                onsubmit="deleteProduct(event)"
+            >
+
+                <div class="form-group">
+
+                    <label>
+                        Product ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="deleteProductId"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                >
+                    Delete Product
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- DELETE CATEGORY -->
+
+        <section class="admin-card">
+
+            <h2>
+                🗑️ Delete Category
+            </h2>
+
+            <p>
+                Remove a category using its ID.
+            </p>
+
+
+            <form
+                onsubmit="deleteCategory(event)"
+            >
+
+                <div class="form-group">
+
+                    <label>
+                        Category ID
+                    </label>
+
+                    <input
+                        type="number"
+                        id="deleteCategoryId"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                >
+                    Delete Category
+                </button>
+
+            </form>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ================= FEEDBACK ================= -->
+
+    <section class="admin-card admin-full-card">
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <h2>
+                    ⭐ Customer Feedback
+                </h2>
+
+                <p>
+                    Feedback received from customers.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="loadFeedback()"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div id="feedbackContainer">
+
+            <div class="loading">
+                Loading feedback...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ORDERS ================= -->
+
+    <section class="admin-card admin-full-card">
+
+        <div class="admin-section-header">
+
+            <div>
+
+                <h2>
+                    📦 Order Management
+                </h2>
+
+                <p>
+                    Change customer order status.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="loadAdminOrders()"
+            >
+                Refresh
+            </button>
+
+        </div>
+
+
+        <div id="adminOrdersContainer">
+
+            <div class="loading">
+                Loading orders...
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

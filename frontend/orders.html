@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount"
+                      class="cart-count">
+                    0
+                </span>
+            </a>
+
+            <a href="orders.html"
+               class="active">
+                Orders
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            YOUR ACTIVITY
+        </span>
+
+        <h1>
+            My Orders
+        </h1>
+
+        <p>
+            Track and view all your previous orders.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDERS ================= -->
+
+<main class="section orders-page">
+
+    <div id="ordersMessage"
+         class="message">
+    </div>
+
+
+    <div id="ordersContainer">
+
+        <div class="loading">
+            Loading your orders...
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/orders.js"></script>
+
+</body>
+
+</html>

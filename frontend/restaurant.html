@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurant - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount"
+                      class="cart-count">
+                    0
+                </span>
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= RESTAURANT HERO ================= -->
+
+<section class="restaurant-hero">
+
+    <div id="restaurantDetails"
+         class="restaurant-details">
+
+        <div class="loading">
+            Loading restaurant...
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MENU ================= -->
+
+<main class="section">
+
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-label">
+                MENU
+            </span>
+
+            <h2>
+                Food Menu
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH MENU -->
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="menuSearch"
+            placeholder="🔍 Search food..."
+        >
+
+    </div>
+
+
+    <!-- MENU -->
+
+    <div id="menuContainer"
+         class="product-grid">
+
+        <div class="loading">
+            Loading menu...
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/restaurant.js"></script>
+
+</body>
+
+</html>

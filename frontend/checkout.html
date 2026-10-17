@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount"
+                      class="cart-count">
+                    0
+                </span>
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            FINAL STEP
+        </span>
+
+        <h1>
+            Checkout
+        </h1>
+
+        <p>
+            Confirm your order and payment method.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<main class="section checkout-page">
+
+
+    <div id="checkoutMessage"
+         class="message">
+    </div>
+
+
+    <div id="checkoutContainer">
+
+        <div class="loading">
+            Loading checkout...
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/checkout.js"></script>
+
+</body>
+
+</html>

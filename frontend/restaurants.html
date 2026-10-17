@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurants - FoodApp</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+            🍔 Food<span>App</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount"
+                      class="cart-count">
+                    0
+                </span>
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </nav>
+
+
+        <div class="nav-auth"
+             id="navAuth">
+
+            <a href="login.html"
+               class="btn btn-outline">
+                Login
+            </a>
+
+            <a href="register.html"
+               class="btn btn-primary">
+                Register
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="page-header-content">
+
+        <span class="section-label">
+            DISCOVER
+        </span>
+
+        <h1>
+            Restaurants
+        </h1>
+
+        <p>
+            Find your favourite restaurant
+            and order delicious food.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RESTAURANT SECTION ================= -->
+
+<main class="section">
+
+
+    <!-- SEARCH -->
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="restaurantSearch"
+            placeholder="🔍 Search restaurants..."
+        >
+
+    </div>
+
+
+    <!-- FILTER -->
+
+    <div class="filter-row">
+
+        <button
+            class="filter-btn active"
+            data-filter="all">
+            All
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="open">
+            🟢 Open Now
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="closed">
+            🔴 Closed
+        </button>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div id="restaurantsContainer"
+         class="restaurant-grid">
+
+        <div class="loading">
+            Loading restaurants...
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="logo">
+                🍔 Food<span>App</span>
+            </a>
+
+            <p>
+                Your favourite food,
+                delivered fast.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>FoodApp</h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="restaurants.html">
+                Restaurants
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Account</h3>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="register.html">
+                Register
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Contact</h3>
+
+            <p>
+                📧 support@foodapp.com
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 FoodApp. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/restaurants.js"></script>
+
+</body>
+
+</html>
